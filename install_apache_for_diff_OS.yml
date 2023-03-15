@@ -14,10 +14,9 @@
     when: ansible_distribution == "Ubuntu"
 
   - name: install HTTPD & PHP  packages on CentOS
-    dnf:
+    yum:
             name: 
               - httpd
               - php
             state: latest
-            update_cache: yes
     when: ansible_distribution == "CentOS"
