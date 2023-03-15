@@ -1,0 +1,14 @@
+---
+- name: Get disk information from Linux machines
+  hosts: all
+  gather_facts: yes
+
+  tasks:
+    - name: Get disk information
+      command: "df -h /"
+      register: disk_info
+
+    - name: Print disk information
+      debug:
+        var: disk_info.stdout_lines
+
