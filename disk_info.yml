@@ -5,7 +5,7 @@
 
   tasks:
     - name: Get disk information
-      command: "df -h /"
+      command: "df -h /boot"
       register: disk_info
 
     - name: Print disk information
