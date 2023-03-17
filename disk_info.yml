@@ -4,11 +4,11 @@
   gather_facts: yes
 
   tasks:
-    - name: Get disk information
+    - name: Get /boot disk information
       command: "df -h /boot"
-      register: disk_info
+      register: boot_info
 
     - name: Print disk information
       debug:
-        var: disk_info.stdout_lines
+        var: boot_info.stdout_lines
 
